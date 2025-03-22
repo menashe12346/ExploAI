@@ -1,0 +1,11 @@
+datasets/cve/nvdcve/*.json
+datasets/processed/datasets_cleaned/*.csv
+datasets/cve/nvdcve/*.json
+datasets/processed/datasets_cleaned/*.csv
+datasets/cve/nvdcve/all_cves_combined.json
+datasets/**/*.json
+datasets/**/*.csv
+datasets/cve/nvdcve/all_cves_combined.json
+datasets/**/*.json
+datasets/**/*.csv
+datasets/cve/nvdcve/all_cves_combined.json
