@@ -1,0 +1,4 @@
+datasets/cve/nvdcve/*.json
+datasets/processed/datasets_cleaned/*.csv
+datasets/cve/nvdcve/*.json
+datasets/processed/datasets_cleaned/*.csv
