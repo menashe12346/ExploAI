@@ -1,3 +1,2 @@
- GNU nano 8.3                                        .gitignore                                                   
 datasets/cve/nvdcve/*.json
 datasets/processed/datasets_cleaned/*.csv
