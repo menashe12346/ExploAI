@@ -1,0 +1,117 @@
+{
+  "attack_id": "EXP-vsftpd-0001",
+  "timestamp": "2025-03-25T15:18:30.346904Z",
+  "target": {
+    "ip": "192.168.56.101",
+    "os": "Linux (Metasploitable2)",
+    "vendor": "vsftpd 2.3.4",
+    "services": [
+      {
+        "port": 21,
+        "service": "ftp",
+        "version": "vsftpd 2.3.4"
+      }
+    ],
+    "cpe_list": [
+      "cpe:/a:vsftpd:vsftpd:2.3.4"
+    ],
+    "known_vulnerabilities": [
+      "CVE-2011-2523"
+    ],
+    "system_context_notes": "vsftpd with backdoor enabled"
+  },
+  "exploit_metadata": {
+    "exploit_id": "vsftpd-backdoor",
+    "exploit_title": "vsftpd 2.3.4 Backdoor",
+    "cve_id": "CVE-2011-2523",
+    "exploit_language": "none",
+    "exploit_type": "Passive Backdoor Trigger",
+    "source": "manual FTP trigger",
+    "exploit_path": null
+  },
+  "exploit_code_raw": null,
+  "exploit_trigger_description": "FTP USER test:) triggers backdoor",
+  "code_static_features": {
+    "functions": [],
+    "syscalls_used": [],
+    "payload_type": "reverse_shell_trigger",
+    "encoding_methods": [],
+    "obfuscation_level": "none",
+    "external_dependencies": [],
+    "exploit_technique": "trigger built-in backdoor"
+  },
+  "runtime_behavior": {
+    "files_created": [],
+    "connections_made": [
+      "192.168.56.101:21",
+      "192.168.56.101:6200"
+    ],
+    "processes_spawned": [],
+    "syscalls_trace": [],
+    "anti_detection_evasion": [
+      "no payload",
+      "legit FTP login"
+    ],
+    "network_trace_file": "EXP-vsftpd-0001.pcap",
+    "cpu_usage_peak": "unknown",
+    "memory_usage": "unknown"
+  },
+  "attack_impact": {
+    "success": false,
+    "access_level": "unknown",
+    "shell_opened": false,
+    "persistence_achieved": false,
+    "data_exfiltrated": [],
+    "log_files_modified": [],
+    "detected_by_defenses": false,
+    "quality_score": 0.1
+  },
+  "pcap_analysis": {
+    "total_packets": 9,
+    "protocols_detected": [
+      "IP",
+      "TCP"
+    ],
+    "unique_ports": [
+      56952,
+      21
+    ],
+    "connections": [
+      {
+        "src": "192.168.56.1",
+        "dst": "192.168.56.101",
+        "sport": 56952,
+        "dport": 21,
+        "payload_preview": "",
+        "payload_size": 0
+      },
+      {
+        "src": "192.168.56.101",
+        "dst": "192.168.56.1",
+        "sport": 21,
+        "dport": 56952,
+        "payload_preview": "33333120506c656173652073706563696679207468652070617373776f72642e",
+        "payload_size": 34
+      }
+    ],
+    "timestamps": {
+      "first_packet": "2025-03-25 16:34:17.097620",
+      "last_packet": "2025-03-25 16:34:28.849725"
+    },
+    "suspicious_patterns": [
+      "none"
+    ]
+  },
+  "exploit_analysis_detailed": [
+    {
+      "line": "USER test:)",
+      "explanation": "\u05de\u05e4\u05e2\u05d9\u05dc \u05d0\u05ea \u05d4\u05d3\u05dc\u05ea \u05d4\u05d0\u05d7\u05d5\u05e8\u05d9\u05ea \u05d1\u05bevsftpd",
+      "purpose": "\u05e4\u05ea\u05d9\u05d7\u05ea shell \u05d1\u05e4\u05d5\u05e8\u05d8 6200",
+      "impact": "\u05e7\u05e8\u05d9\u05d8\u05d9",
+      "critical": true,
+      "used_in_execution": true,
+      "modified_target_state": true,
+      "line_effectiveness_score": 1.0
+    }
+  ]
+}

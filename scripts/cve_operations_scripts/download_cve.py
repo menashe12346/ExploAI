@@ -5,7 +5,7 @@ import gzip
 import shutil
 
 # הגדרת הנתיב לתיקיית ההורדה
-download_dir = os.path.expanduser("~/cve_data")
+download_dir = os.path.expanduser("~/home/menashe/cyber_ai_project/datasets/cve/nvdcve/")
 os.makedirs(download_dir, exist_ok=True)
 
 # רשימת השנים להורדה

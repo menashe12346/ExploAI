@@ -3,8 +3,10 @@ import json
 
 all_cves = []
 
+target_dir = "/home/menashe/cyber_ai_project/datasets/cve/nvdcve"
+
 # מעבר על כל הקבצים בתיקייה הנוכחית
-for filename in sorted(os.listdir(".")):
+for filename in sorted(os.listdir(target_dir)):
     if filename.endswith(".json"):
         with open(filename, 'r') as f:
             try:

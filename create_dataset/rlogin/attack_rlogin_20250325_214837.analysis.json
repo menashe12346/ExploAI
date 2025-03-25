@@ -1,0 +1,201 @@
+{
+  "total_packets": 21,
+  "protocols_detected": [
+    "TCP"
+  ],
+  "connections": [
+    {
+      "src": "192.168.56.1",
+      "dst": "192.168.56.101",
+      "sport": 1023,
+      "dport": 513,
+      "flags": "FA",
+      "payload_size": 0,
+      "payload_preview": ""
+    },
+    {
+      "src": "192.168.56.101",
+      "dst": "192.168.56.1",
+      "sport": 513,
+      "dport": 1023,
+      "flags": "FA",
+      "payload_size": 0,
+      "payload_preview": ""
+    },
+    {
+      "src": "192.168.56.1",
+      "dst": "192.168.56.101",
+      "sport": 1023,
+      "dport": 513,
+      "flags": "A",
+      "payload_size": 0,
+      "payload_preview": ""
+    },
+    {
+      "src": "192.168.56.1",
+      "dst": "192.168.56.101",
+      "sport": 1022,
+      "dport": 513,
+      "flags": "S",
+      "payload_size": 0,
+      "payload_preview": ""
+    },
+    {
+      "src": "192.168.56.101",
+      "dst": "192.168.56.1",
+      "sport": 513,
+      "dport": 1022,
+      "flags": "SA",
+      "payload_size": 0,
+      "payload_preview": ""
+    },
+    {
+      "src": "192.168.56.1",
+      "dst": "192.168.56.101",
+      "sport": 1022,
+      "dport": 513,
+      "flags": "A",
+      "payload_size": 0,
+      "payload_preview": ""
+    },
+    {
+      "src": "192.168.56.1",
+      "dst": "192.168.56.101",
+      "sport": 1022,
+      "dport": 513,
+      "flags": "PA",
+      "payload_size": 1,
+      "payload_preview": "00"
+    },
+    {
+      "src": "192.168.56.101",
+      "dst": "192.168.56.1",
+      "sport": 513,
+      "dport": 1022,
+      "flags": "A",
+      "payload_size": 0,
+      "payload_preview": ""
+    },
+    {
+      "src": "192.168.56.1",
+      "dst": "192.168.56.101",
+      "sport": 1022,
+      "dport": 513,
+      "flags": "PA",
+      "payload_size": 31,
+      "payload_preview": "6d656e6173686500726f6f7400787465726d2d6b"
+    },
+    {
+      "src": "192.168.56.101",
+      "dst": "192.168.56.1",
+      "sport": 513,
+      "dport": 1022,
+      "flags": "A",
+      "payload_size": 0,
+      "payload_preview": ""
+    },
+    {
+      "src": "192.168.56.101",
+      "dst": "192.168.56.1",
+      "sport": 513,
+      "dport": 1022,
+      "flags": "PA",
+      "payload_size": 1,
+      "payload_preview": "00"
+    },
+    {
+      "src": "192.168.56.1",
+      "dst": "192.168.56.101",
+      "sport": 1022,
+      "dport": 513,
+      "flags": "A",
+      "payload_size": 0,
+      "payload_preview": ""
+    },
+    {
+      "src": "192.168.56.101",
+      "dst": "192.168.56.1",
+      "sport": 513,
+      "dport": 1022,
+      "flags": "PAU",
+      "payload_size": 1,
+      "payload_preview": "80"
+    },
+    {
+      "src": "192.168.56.1",
+      "dst": "192.168.56.101",
+      "sport": 1022,
+      "dport": 513,
+      "flags": "A",
+      "payload_size": 0,
+      "payload_preview": ""
+    },
+    {
+      "src": "192.168.56.101",
+      "dst": "192.168.56.1",
+      "sport": 513,
+      "dport": 1022,
+      "flags": "PA",
+      "payload_size": 521,
+      "payload_preview": "4c617374206c6f67696e3a20547565204d617220"
+    },
+    {
+      "src": "192.168.56.1",
+      "dst": "192.168.56.101",
+      "sport": 1022,
+      "dport": 513,
+      "flags": "A",
+      "payload_size": 0,
+      "payload_preview": ""
+    },
+    {
+      "src": "192.168.56.1",
+      "dst": "192.168.56.101",
+      "sport": 1022,
+      "dport": 513,
+      "flags": "PA",
+      "payload_size": 12,
+      "payload_preview": "ffff7373001f0073073003e0"
+    },
+    {
+      "src": "192.168.56.101",
+      "dst": "192.168.56.1",
+      "sport": 513,
+      "dport": 1022,
+      "flags": "PA",
+      "payload_size": 27,
+      "payload_preview": "1b5d303b726f6f74406d65746173706c6f697461"
+    },
+    {
+      "src": "192.168.56.1",
+      "dst": "192.168.56.101",
+      "sport": 1022,
+      "dport": 513,
+      "flags": "A",
+      "payload_size": 0,
+      "payload_preview": ""
+    },
+    {
+      "src": "192.168.56.101",
+      "dst": "192.168.56.1",
+      "sport": 513,
+      "dport": 1022,
+      "flags": "PA",
+      "payload_size": 23,
+      "payload_preview": "726f6f74406d65746173706c6f697461626c653a"
+    },
+    {
+      "src": "192.168.56.1",
+      "dst": "192.168.56.101",
+      "sport": 1022,
+      "dport": 513,
+      "flags": "A",
+      "payload_size": 0,
+      "payload_preview": ""
+    }
+  ],
+  "timestamps": {
+    "first_packet": 1742932124.221652,
+    "last_packet": 1742932132.238417
+  }
+}
