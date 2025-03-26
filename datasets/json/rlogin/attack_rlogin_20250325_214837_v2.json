@@ -1,0 +1,125 @@
+{
+  "attack_id": "RLOGIN-20250325",
+  "target": {
+    "ip": "192.168.56.101",
+    "os": "Linux",
+    "services": [
+      {
+        "port": 513,
+        "service": "rlogin",
+        "version": "OpenBSD rlogind"
+      }
+    ]
+  },
+  "exploit_metadata": {
+    "exploit_id": null,
+    "exploit_title": "rlogin Misconfiguration Root Access",
+    "exploit_language": null,
+    "exploit_type": "Misconfiguration Abuse",
+    "source": "manual",
+    "exploit_path": null
+  },
+  "exploit_code_raw": null,
+  "code_static_features": {
+    "functions": [],
+    "syscalls_used": [],
+    "payload_type": "none",
+    "encoding_methods": [],
+    "obfuscation_level": "none",
+    "external_dependencies": [],
+    "exploit_technique": "rlogin misconfiguration"
+  },
+  "connections_summary": {
+    "total_connections": 1,
+    "total_packets": 42,
+    "protocols": ["TCP"],
+    "ports_involved": [513],
+    "flags_observed": ["S", "SA", "A", "PA", "FA", "PAU"],
+    "data_transferred_bytes": 430,
+    "sessions": [
+      {
+        "src": "192.168.56.1",
+        "dst": "192.168.56.101",
+        "role": "attacker → victim",
+        "packets_sent": 21
+      },
+      {
+        "src": "192.168.56.101",
+        "dst": "192.168.56.1",
+        "role": "victim → attacker",
+        "packets_sent": 21
+      }
+    ]
+  },
+  "payload_analysis": [
+    {
+      "src": "192.168.56.1",
+      "dst": "192.168.56.101",
+      "protocol": "TCP",
+      "ascii_preview": "id"
+    },
+    {
+      "src": "192.168.56.101",
+      "dst": "192.168.56.1",
+      "protocol": "TCP",
+      "ascii_preview": "uid=0(root) gid=0(root) groups=0(root)"
+    },
+    {
+      "src": "192.168.56.1",
+      "dst": "192.168.56.101",
+      "protocol": "TCP",
+      "ascii_preview": "whoami"
+    },
+    {
+      "src": "192.168.56.101",
+      "dst": "192.168.56.1",
+      "protocol": "TCP",
+      "ascii_preview": "root"
+    }
+  ],
+  "runtime_behavior": {
+    "shell_opened": {
+      "shell_type": "interactive shell via rlogin",
+      "session_type": "shell",
+      "shell_access_level": "root",
+      "authentication_method": "none (implicit trust via rlogin)",
+      "shell_session": {
+        "commands_run": [
+          {
+            "command": "id",
+            "command_type": "privilege_check",
+            "response_preview": "uid=0(root) gid=0(root) groups=0(root)",
+            "sensitive_data_exposed": ["UID info", "group info"],
+            "effectiveness_score": 0.9
+          },
+          {
+            "command": "whoami",
+            "command_type": "privilege_check",
+            "response_preview": "root",
+            "sensitive_data_exposed": ["current user"],
+            "effectiveness_score": 0.8
+          }
+        ]
+      }
+    }
+  },
+  "timestamps": {
+    "first_packet": 1742935444.381518,
+    "last_packet": 1742935448.340182
+  },
+  "attack_impact": {
+    "success": true,
+    "access_level": "root",
+    "shell_opened": true,
+    "shell_type": "interactive shell via rlogin",
+    "authentication_required": false,
+    "persistence_achieved": false,
+    "data_exfiltrated": [],
+    "sensitive_info_exposed": ["user identity", "root shell prompt"],
+    "log_files_modified": [],
+    "detected_by_defenses": false,
+    "quality_score": 0.92
+  },
+  "explanation_of_attack": "This attack exploits a misconfigured rlogin service running on the target system that allows login as 'root' from trusted hosts without requiring a password. The attacker connects to port 513 and gains an interactive shell as root. This is possible due to either a permissive hosts.equiv or .rhosts configuration that implicitly trusts the attacker's IP or hostname.",
+  "exploit_analysis_detailed": []
+}
